@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Lector de Imágenes IA - Extrae texto de cualquier imagen usando OCR avanzado directamente en tu navegador.">
+    <title>🔍 Lector de Facturas IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-effects">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="title">🔍 Lector de Facturas IA</h1>
+            <p class="subtitle">Analiza tus facturas y extrae datos clave automáticamente con IA.</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Upload Section -->
+            <section class="card upload-card">
+                <div class="card-header">
+                    <h2 class="card-title">📸 Imagen de Factura</h2>
+                    <span class="badge" id="interactionHint" hidden>Interactivo: Arrastra para corregir</span>
+                </div>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <span class="upload-icon">📁</span>
+                        <p>Arrastra tu factura aquí o haz clic</p>
+                        <span class="upload-hint">JPG, PNG, BMP</span>
+                    </div>
+                    <div id="imageContainer" class="image-container">
+                        <img id="previewImage" class="preview-image" alt="Vista previa">
+                        <div id="roiOverlay" class="roi-overlay"></div>
+                    </div>
+                </div>
+                <button id="analyzeBtn" class="btn btn-primary" disabled>
+                    <span class="btn-text">✨ Analizar Factura</span>
+                    <span class="btn-loader" hidden></span>
+                </button>
+            </section>
+
+            <!-- Results Section -->
+            <section class="card results-card">
+                <h2 class="card-title">📊 Datos Extraídos</h2>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Campo</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody id="invoiceTableBody">
+                            <!-- Dynamic Rows -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="action-buttons mt-4">
+                    <button id="exportCsvBtn" class="btn btn-secondary" disabled>📊 Excel (CSV)</button>
+                    <button id="clearBtn" class="btn btn-danger" disabled>🗑️ Limpiar</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progressContainer" hidden>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text" id="progressText">Inicializando motor OCR...</p>
+        </div>
+
+        <footer class="footer">
+            <p>Powered by <a href="https://tesseract.projectnaptha.com/" target="_blank">Tesseract.js</a> •
+                Procesamiento 100% en tu navegador</p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
