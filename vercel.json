@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "name": "lector-imagenes-ia",
+    "builds": [
+        {
+            "src": "web/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/web/$1"
+        }
+    ]
+}

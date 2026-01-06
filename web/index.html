@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lector de Imágenes IA - Extrae texto de cualquier imagen usando OCR avanzado directamente en tu navegador.">
+    <title>🔍 Lector de Imágenes IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="title">🔍 Lector de Imágenes IA</h1>
+            <p class="subtitle">Sube una imagen y extrae el texto al instante usando OCR de alta precisión.</p>
+        </header>
+
+        <div class="content-grid">
+            <!-- Upload Section -->
+            <section class="card upload-card">
+                <h2 class="card-title">📸 Imagen de Origen</h2>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <div class="upload-placeholder" id="uploadPlaceholder">
+                        <span class="upload-icon">📁</span>
+                        <p>Arrastra una imagen aquí o haz clic para seleccionar</p>
+                        <span class="upload-hint">Soporta JPG, PNG, BMP, TIFF</span>
+                    </div>
+                    <img id="previewImage" class="preview-image" alt="Vista previa">
+                </div>
+                <button id="analyzeBtn" class="btn btn-primary" disabled>
+                    <span class="btn-text">✨ Analizar Imagen</span>
+                    <span class="btn-loader" hidden></span>
+                </button>
+            </section>
+
+            <!-- Results Section -->
+            <section class="card results-card">
+                <h2 class="card-title">📝 Texto Extraído</h2>
+                <div class="results-area">
+                    <textarea id="resultText" class="result-textarea" placeholder="El texto extraído aparecerá aquí..." readonly></textarea>
+                </div>
+                <div class="action-buttons">
+                    <button id="copyBtn" class="btn btn-secondary" disabled>📋 Copiar</button>
+                    <button id="downloadBtn" class="btn btn-secondary" disabled>📥 Descargar .TXT</button>
+                    <button id="clearBtn" class="btn btn-danger" disabled>🗑️ Limpiar</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" id="progressContainer" hidden>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p class="progress-text" id="progressText">Inicializando motor OCR...</p>
+        </div>
+
+        <footer class="footer">
+            <p>Powered by <a href="https://tesseract.projectnaptha.com/" target="_blank">Tesseract.js</a> • Procesamiento 100% en tu navegador</p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
