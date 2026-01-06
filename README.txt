@@ -1,5 +1,5 @@
 =========================================
-      LECTOR DE IMÁGENES IA (OCR)
+      LECTOR DE FACTURAS IA (OCR)
 =========================================
 
 🌐 LINK DE ACCESO (WEB):
@@ -8,19 +8,27 @@ https://proyecto-lector-imagenes.vercel.app
 -----------------------------------------
 1. DESCRIPCIÓN DEL PROYECTO
 -----------------------------------------
-Esta aplicación permite extraer texto de imágenes (OCR) de forma instantánea y segura. 
-A diferencia de otras herramientas, el procesamiento se realiza 100% en el navegador del usuario utilizando la librería Tesseract.js. Esto garantiza velocidad y privacidad, ya que las imágenes no se suben a ningún servidor externo para su análisis.
+Esta aplicación permite extraer datos estructurados de facturas de forma interactiva. 
+Utiliza tecnología OCR avanzada (Tesseract.js) para identificar automáticamente campos clave como Nombre de Empresa, RTN, Fecha, Cliente, Total y más. El procesamiento se realiza 100% en el navegador, garantizando velocidad y privacidad total.
+
+🆕 NUEVA CARACTERÍSTICA: CORRECCIÓN INTERACTIVA
+El sistema ahora dibuja cuadros sobre los campos detectados en la imagen. Si el algoritmo se equivoca, puedes mover o redimensionar los cuadros manualmente, y el sistema re-analizará automáticamente esa región específica para mayor precisión.
 
 -----------------------------------------
 2. CÓMO FUNCIONA (INSTRUCCIONES)
 -----------------------------------------
 1. Acceda al enlace proporcionado arriba.
-2. Arrastre una imagen al área indicada o haga clic para seleccionar un archivo desde su dispositivo móvil o PC.
-3. Haga clic en el botón "✨ Analizar Imagen".
-4. El sistema mostrará una barra de progreso mientras el motor de IA identifica los caracteres.
-5. El texto extraído aparecerá en el recuadro de la derecha.
-6. Puede copiar el texto al portapapeles o descargarlo como un archivo .txt.
-7. Use el botón "Limpiar" para procesar una nueva imagen.
+2. Arrastre una imagen de factura al área indicada o haga clic para seleccionar un archivo.
+3. Haga clic en el botón "✨ Analizar Factura".
+4. El sistema mostrará:
+   - Cuadros de selección sobre los campos detectados (Empresa, RTN, Total, etc.)
+   - Una tabla con los datos extraídos
+5. Si algún campo es incorrecto:
+   - Arrastra el cuadro hacia la ubicación correcta en la imagen
+   - Redimensiona el cuadro usando el manejador en la esquina inferior derecha
+   - El sistema re-analizará automáticamente esa zona
+6. Descargue los datos como archivo CSV para usar en Excel.
+7. Use el botón "Limpiar" para procesar una nueva factura.
 
 -----------------------------------------
 3. PROCESO DE DESARROLLO
@@ -36,10 +44,11 @@ FASE 2: Migración a Aplicación Web Estática (Vercel)
 - Integración de Tesseract.js vía CDN para procesamiento en el lado del cliente (browser-side).
 - Optimización de UI para carga rápida y diseño responsive.
 
-FASE 3: Despliegue y Distribución
-- Configuración de vercel.json para alojamiento nativo.
-- Vinculación con repositorio GitHub: Nayarlatothep/Proyecto-LectorImagenes.
-- Lanzamiento de la URL pública para uso global.
+FASE 3: Especialización en Facturas (Enero 2026)
+- Implementación de detección automática de campos estructurados.
+- Sistema interactivo de cuadros de selección (ROI - Region of Interest).
+- Re-análisis de regiones específicas para corrección manual.
+- Exportación de datos a formato CSV/Excel.
 
 -----------------------------------------
 4. CARACTERÍSTICAS TÉCNICAS
@@ -48,6 +57,8 @@ FASE 3: Despliegue y Distribución
 - Diseño: Interfaz moderna con efectos de cristal, animaciones y modo oscuro.
 - Soporte de Idiomas: Español e Inglés (spa+eng).
 - Compatibilidad: Funciona en Chrome, Safari, Edge y navegadores móviles.
+- Campos Detectados: Empresa, Factura #, Fecha, Cliente, Dirección, RTN, Artículos, Cantidad, Total.
+- Interactividad: Cuadros arrastrables y redimensionables con re-análisis automático.
 
 -----------------------------------------
 Desarrollado con ❤️ para Nayarlatothep
