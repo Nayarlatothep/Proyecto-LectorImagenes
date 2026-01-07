@@ -3,7 +3,7 @@
 =========================================
 
 🌐 LINK DE ACCESO (WEB):
-https://proyecto-lector-imagenes.vercel.app
+https://proyecto-lector-imagenes-7pk5.vercel.app
 
 -----------------------------------------
 1. DESCRIPCIÓN DEL PROYECTO
